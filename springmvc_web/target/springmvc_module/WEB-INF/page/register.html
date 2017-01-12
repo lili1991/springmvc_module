@@ -1,0 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+    <body>
+        <form method="post">
+            username:<input type="text" name="username" placeholder='请输入用户名'><br/>
+            password:<input type="password" name="password"><br/>
+            city:<select>
+            <c:forEach items="${map.get('cityList') }" var="city">
+                <option>${map.get('cityList')}</option>
+            </c:forEach>
+        </select><br/>
+            <input type="submit" value="注册"/>
+        </form>
+    </body>
+</html>
