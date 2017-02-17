@@ -13,6 +13,7 @@
         <module>springmvc_service</module>
         <module>springmvc_dao</module>
         <module>springmvc_model</module>
+        <module>springmvc_common</module>
     </modules>
 
     <build>
@@ -113,6 +114,14 @@
             <version>2.2</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>4.2.2.RELEASE</version>
+        </dependency>
+
 
     </dependencies>
 
