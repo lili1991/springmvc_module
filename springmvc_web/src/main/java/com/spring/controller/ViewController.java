@@ -11,7 +11,15 @@ public class ViewController {
 
     @RequestMapping("/view")
     public String view(){
-        System.out.println("congratulations~");
+        System.out.println("看电影ing~~~");
         return "index";
     }
+
+    @RequestMapping("/sleep")
+    public String sleep(){
+        System.out.println("sleeping………………zzzZZZ~~~~");
+        return "index";
+    }
+
+
 }

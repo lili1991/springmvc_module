@@ -3,7 +3,7 @@ package com.spring.model;
 /**
  * Created by liangll18922 on 2017/1/12.
  */
-public class User extends Id{
+public class User extends BaseModel{
 
     private String userName;
     private String password;

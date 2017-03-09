@@ -30,8 +30,7 @@
         <!-- 文件的后缀 -->
         <property name="suffix" value=".html"></property>
     </bean>
-    <bean id="human" class="com.spring.aoptest.Human">
-    </bean>
+    <bean id="VideoHelper" class="com.spring.aoptest.VideoHelper"></bean>
     <!--<bean class="com.spring.controller.InterceptorTestController"/>-->
 
 
@@ -46,6 +45,15 @@
                   class="com.spring.interceptor.HandlerInterceptor3"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <aop:config>
+        <aop:aspect ref="VideoHelper">
+            <aop:before pointcut="execution(* com.spring.controller.ViewController.view(..))"
+                        method="beforeVideo"></aop:before>
+            <aop:after pointcut="execution(* com.spring.controller.ViewController.view(..))"
+                       method="afterVideo"></aop:after>
+        </aop:aspect>
+    </aop:config>
 
 
 </beans>
