@@ -44,5 +44,6 @@
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:4.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.7" level="project" />
+    <orderEntry type="module" module-name="springmvc_service" />
   </component>
 </module>
