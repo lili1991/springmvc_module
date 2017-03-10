@@ -3,7 +3,6 @@ package com.spring.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import com.spring.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;

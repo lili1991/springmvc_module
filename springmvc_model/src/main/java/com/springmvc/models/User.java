@@ -1,8 +1,9 @@
-package com.spring.model;
+package com.springmvc.models;
 
 /**
  * Created by liangll18922 on 2017/1/12.
  */
+
 public class User extends BaseModel{
 
     private String userName;
