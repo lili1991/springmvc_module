@@ -18,4 +18,62 @@
       http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <context:property-placeholder location="/WEB-INF/application.properties"/>
+
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="smartDataSource"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="smartDataSource"/>
+        <property name="mapperLocations">
+            <array>
+                <value>classpath*:com/spring/dao/*Mapper.xml</value>
+                <!--<value>classpath*:xmlmappers/*Mapper.xml</value>-->
+            </array>
+        </property>
+    </bean>
+
+    <bean id="smartDataSource" class="mybatis.spring.datasource.SmartDataSource">
+        <property name="defaultTargetDataSource" ref="baseDataSource"/>
+        <property name="targetDataSources">
+            <map>
+                <entry key="base" value-ref="baseDataSource"/>
+                <entry key="query" value-ref="queryDataSource"/>
+            </map>
+        </property>
+        <property name="routeTable">
+            <map>
+                <entry key="com\.spring\.service.*" value="base"/>
+                <entry key="com\.spring\.queryService.*" value="query"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="baseDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${base.jdbc.driver}"/>
+        <property name="url" value="${base.jdbc.url}"/>
+        <property name="username" value="${base.jdbc.username}"/>
+        <property name="password" value="${base.jdbc.password}"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="SELECT 'x'"/>
+
+        <property name="filters" value="config" />
+        <property name="connectionProperties" value="config.decrypt=false" />
+    </bean>
+
+    <bean id="queryDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${query.jdbc.driver}"/>
+        <property name="url" value="${query.jdbc.url}"/>
+        <property name="username" value="${query.jdbc.username}"/>
+        <property name="password" value="${query.jdbc.password}"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="SELECT 'x'"/>
+
+        <property name="filters" value="config" />
+        <property name="connectionProperties" value="config.decrypt=false" />
+    </bean>
+
 </beans>

@@ -30,12 +30,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springmvc_common" target="1.5" />
-      <module name="springmvc_dao" target="1.5" />
-      <module name="springmvc_model" target="1.5" />
-      <module name="springmvc_module" target="1.5" />
-      <module name="springmvc_service" target="1.5" />
-      <module name="springmvc_web" target="1.5" />
+      <module name="springmvc_common" target="1.7" />
+      <module name="springmvc_dao" target="1.7" />
+      <module name="springmvc_model" target="1.7" />
+      <module name="springmvc_module" target="1.7" />
+      <module name="springmvc_service" target="1.7" />
+      <module name="springmvc_web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

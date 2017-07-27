@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.dao.UserDao">
+
+    <insert id="insertUserInfo" parameterType="com.spring.model.User" useGeneratedKeys="true" keyProperty="id">
+          insert into user(username,password,email,city,create_time,lastModifyTime)
+          VALUES (#{userName},#{password},#{email},#{city},#{create_time},#{lastModifyTime});
+    </insert>
+
+    <select id="selectPageUserInfo" parameterType="java.util.Map" resultType="com.spring.model.User">
+        select username,password,email,city,create_time,lastModifyTime from user
+    </select>
+
+    <select id="selectAll" parameterType="java.util.Map" resultType="com.spring.model.User">
+        select username,password,email,city,create_time,lastModifyTime from user
+    </select>
+
+    <insert id="insertDictionaryInfo" parameterType="com.spring.model.User" useGeneratedKeys="true" keyProperty="id">
+
+                insert into filedefinition(fieldname,fielddescribe ,memo)
+                VALUES (#{userName},#{password},#{city});
+
+
+    </insert>
+
+</mapper>
